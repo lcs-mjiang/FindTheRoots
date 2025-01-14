@@ -13,6 +13,9 @@ struct RootsCalculatorView: View {
     @State var numberb: Double = 1
     @State var numberc: Double = 1
     
+    
+
+    
     var body: some View {
         
         NavigationStack {
@@ -24,18 +27,22 @@ struct RootsCalculatorView: View {
                 HStack{
                     VStack{
                         
-                        Text("a: \(numbera)")
+                       
+                        Text("a:\(numbera.formatted(.number.precision(.fractionLength(1))))")
                         
                         Slider(
                             value: $numbera,
                             in: 1...100,
                             step:(1)
                         )
+                        
+                       
                     }
                     
                     VStack{
                         
-                    Text("b: \(numberb)")
+                        Text("b:\(numberb.formatted(.number.precision(.fractionLength(1))))")
+                        
                         Slider(
                             value: $numberb,
                             in: 1...100,
@@ -45,7 +52,7 @@ struct RootsCalculatorView: View {
                     
                     VStack{
                         
-                        Text("c: \(numberc)")
+                        Text("c:\(numberc.formatted(.number.precision(.fractionLength(1))))")
                         
                         Slider(
                             value: $numberc,
